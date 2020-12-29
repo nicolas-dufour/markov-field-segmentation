@@ -1,0 +1,21 @@
+\babel@toc {french}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Code pour bruiter notre image \relax }}{2}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Diff\'erentes images bruit\'es par des param\`etres de bruits diff\'erents.\relax }}{2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces 2 gaussiennes de param\`etres $\mathcal {N}(1,1)$ et ${N}(4,1)$\relax }}{3}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces 2 gaussiennes de param\`etres $\mathcal {N}(1,1)$ et ${N}(2,1)$\relax }}{3}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces 2 gaussiennes de param\`etres $\mathcal {N}(1,1)$ et ${N}(1,9)$\relax }}{4}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Segmentation par Kmeans de nos images bruit\'e\relax }}{5}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Segmentation par MPM de nos images bruit\'e\relax }}{6}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces 2 gaussiennes de param\`etres $\mathcal {N}(1,1)$ et ${N}(1,9)$\relax }}{7}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Convergences des diff\'erentes valeurs avec l'algorithme EM avec leur taux moyen d'erreur MPM aveugle associ\'e\relax }}{8}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces MPM non supervis\'ee et EM avec initialisation naive\relax }}{9}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces MPM non supervis\'ee et EM avec initialisation KMeans\relax }}{9}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Segmentation par MPM non supervis\'ee par EM-Kmeans de nos images bruit\'e\relax }}{10}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces MPM non supervis\'ee et EM avec initialisation KMeans\relax }}{11}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Segmentation par MPM non supervis\'ee par SEM-Kmeans de nos images bruit\'e\relax }}{11}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Generation de champs de Markov et segmentation par champs de markov cach\'ee\relax }}{12}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Segmentation par champs de markov d'image r\'eelles bruit\'e supervis\'ee \relax }}{13}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces Segmentation par champs de markov d'image r\'eelles bruit\'e non supervis\'ee \relax }}{14}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Segmentation d'une image satellite de l'europe\relax }}{15}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Segmentation d'une image d'une fleur de lotus\relax }}{15}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Segmentation d'une image satellite de fus\'ee\relax }}{15}% 

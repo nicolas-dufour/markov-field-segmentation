@@ -1,0 +1,8 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Mise en place des fonctions de bases}{2}% 
+\contentsline {section}{\numberline {2}Segmentation basique par Kmeans }{5}% 
+\contentsline {section}{\numberline {3}Segmentation MPM aveugle}{6}% 
+\contentsline {section}{\numberline {4}Segmentation non supervis\'ee aveugle}{7}% 
+\contentsline {section}{\numberline {5}Segmentation par champs de Markov cach\'es supervis\'ee}{12}% 
+\contentsline {section}{\numberline {6}Segmentation par champs de Markov cach\'es non-supervis\'ee}{14}% 
+\contentsline {section}{\numberline {7}Segmentation r\'eelle}{15}% 

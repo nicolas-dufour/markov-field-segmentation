@@ -1,0 +1,344 @@
+\documentclass[10pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage{amssymb} 
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[format=plain,
+            labelfont={bf,it},
+            textfont=it]{caption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{listings}
+
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-2cm}
+\geometry{ hmargin=2.5cm, vmargin=1.5 cm }
+
+\title{Compte Rendu :TP segmentation dans les chaines de markov cachées } 
+
+\author{DUFOUR Nicolas}
+
+\vspace{-2cm}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+
+    \textsc{\LARGE Télécom SudParis}\\[2cm]
+
+    \textsc{\Large Segmentation d'image}\\[1.5cm]
+
+    % Title
+			\HRule \\[0.4cm]
+    { \huge \bfseries Compte rendu: TP Segmentation d'image\\[0.4cm] }
+
+     \HRule \\[2cm]
+			{\includegraphics[scale=0.22]{./bruitage.png}}
+    \\[2cm]
+
+    \begin{minipage}{0.4\textwidth}
+      \begin{center} \large
+        Nicolas \textsc{Dufour}\\
+      \end{center}
+    \end{minipage}
+    \vfill
+
+    % Bottom of the page
+    {\large Automne 2019}
+
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+
+\section{Mise en place des fonctions de bases}
+
+Pour cette section, j'ai du revenir en arrière car arrivé à la segmentation aveugle, pour 200 échantillons, mon code a mis 10h à tourner. Étant donné que c'est la segmentation la plus simple en terme de complexité, cela m'a inquiété pour la suite. Ainsi, en vectorisant mes fonctions avec numpy (à la place d'itérer sur l'image auparavant) j'ai pu réduire le temps de la segmentation aveugle sur 200 échantillons à 30 secondes, ce qui m'aidera considérablement par la suite. L'amélioration la plus importante est celle de la fonction de bruitage, bruit\_gauss, donné ci-dessous:
+
+\begin{figure}[H]
+	\begin{lstlisting}[language=Python,frame=single]
+def bruit_gauss(X,m,n,cl1,cl2,m1,sig1,m2,sig2):
+		gauss_1=np.random.normal(m1,sig1,(m,n))
+		gauss_2=np.random.normal(m2,sig2,(m,n))
+		return(np.where(X==cl1,gauss_1,gauss_2))
+	\end{lstlisting}
+	\caption{ Code pour bruiter notre image }
+\end{figure}
+Ainsi, en tirant directement toutes les gaussiennes possibles dans 2 matrices, puis en les choisissant vectoriellement, on a une accélération considérable même si au final, nous faisons 2 fois plus de tirages.
+
+\newline
+
+Ainsi, nous pouvons faire nos bruitages pour les différents bruits et pour 5 images. J'ai choisi 3 images avec des formes assez simples et 2 avec des formes plus complexes. On trouve le résultat suivant:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.25]{./bruitage.png}
+	\caption{Différentes images bruités par des paramètres de bruits différents.}
+	\label{fig:figure_bruitage}
+\end{figure}
+\newline
+
+On se rend compte que plusieurs facteurs entre en compte vis-à-vis du bruit. 
+\newline
+On se rend compte dans un premier temps que lorsque les 2 moyennes des gaussiennes sont suffisamment éloignées comme dans le premier cas $\mathcal{N}(1,1)$ | $\mathcal{N}(4,1)$, on constate une différence visuelle importante. On différencie bien les 2 classes à l’œil nu. Cela se comprend en traçant les distributions des 2 gaussiennes:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.4]{./gaussienne_1141.png}
+	\caption{2 gaussiennes de paramètres $\mathcal{N}(1,1)$ et $\matcal{N}(4,1)$}
+	\label{fig:gauss_1141}
+\end{figure}
+On voit donc bien que nos 2 gaussiennes sont assez éloignées. Ce qui explique que le bruit n’empêche pas la distinction des 2 classes visuellement.
+\newline
+Pour le 2ème cas, $\mathcal{N}(1,1)$ | $\mathcal{N}(2,1)$, on se rend compte que cela deviens très compliqué de distinguer bruit de signal. Les moyennes sont trop proche, trop superposées, comme on peut le voir sur la figure suivante: 
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.4]{./gaussienne_1121.png}
+	\caption{2 gaussiennes de paramètres $\mathcal{N}(1,1)$ et $\matcal{N}(2,1)$}
+	\label{fig:gauss_1121}
+\end{figure}
+Cette difficulté du au bruitage se voit particulièrement sur les formes plus compliquées comme le zèbre ou la vache.
+\newline
+Pour finir, on voit quand les moyennes sont superposées, on peut quand même différencier les formes car les variances sont différentes, même si on a du mal à differencier les classes pour des formes plus complexes. C'est le 3ème cas $\mathcal{N}(1,1)$ | $\mathcal{N}(1,9)$  On comprend mieux en regardant le tracé des gaussiennes:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.4]{./gaussienne_1119.png}
+	\caption{2 gaussiennes de paramètres $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+	\label{fig:gauss_1119}
+\end{figure}
+\newline
+Comme on peut le voir, comme la variance de la 2ème classe est très grande, au final les zones ou l'on a des distributions très proches sont relativement réduites.
+\newpage
+\section{Segmentation basique par Kmeans	}
+Avec le Kmeans le principe est de distribuer les pixels de l'image bruitée entre 2 classes. Les 2 classes ne sont pas nécessairement nos classes cl1,cl2. Kmeans groupe chaque pixel par proximité dans l'espace des nuances de gris. Les classes sont définis par les positions moyennes des pixels de cette classe. Ensuite, on pourra faire une bijection entre les classes et cl1,cl2. La bijection utiliser ici est d'associer $min(cl1,cl2)$ à la plus petite des 2 classes du Kmeans et $max(cl1,cl2)$ à la plus grande des classes. On effectue les classifications sur nos 5 images et nos 3 niveaux de bruit 100 fois et on obtient le tableau suivant avec les erreurs associées:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.18]{./segmentation_kmeans.png}
+	\caption{Segmentation par Kmeans de nos images bruité}
+	\label{fig:segmentation_kmeans}
+\end{figure}
+\newline
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Image \textbackslash Distribution du bruit} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(4,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(2,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$,$\mathcal{N}(1,9)$} \\ \hline
+abcd                           & 0,08                                                    & 0,35                                                    & 0,49                                                   \\ \hline
+B                              & 0,08                                                    & 0,34                                                    & 0,49                                                   \\ \hline
+Cible                          & 0,07                                                    & 0,33                                                    & 0,49                                                   \\ \hline
+Vache                          & 0,07                                                    & 0,31                                                    & 0,49                                                   \\ \hline
+Zebre                          & 0,07                                                    & 0,31                                                    & 0,49                                                   \\ \hline
+\end{tabular}
+\caption{Tableau récapitulatif des taux d'erreurs moyens sur 100  itérations}
+\end{table}
+On peut observer que Kmeans arrive à des résultats corrects pour des situation de bruits optimales comme dans le premier cas de bruit. Cependant on observe bien qu'il segmente mal les zones bruitées de moyennes proche comme dans le 2ème cas de bruit. On voit que comme Kmeans ne prend pas en compte le coté stochastique de l'image, la segmentation est très bruitée. On voit aussi apparaître un autre problème dans le cas 3 où les classes se voit inverser. Comme Kmeans ne prend pas en compte les connaissances sur nos niveaux de bruit, il ne sait rien sur les classes et on se retrouve avec une inversion de classes car les centroïdes ne sont pas directement définis par des connaissances sur nos classes.
+\newline
+Quand on voit dans le 3ème cas que en moyenne le taux d'erreur est proche de 50\%, cela veut dire que l'on fait presque comme si on segmentait chaque pixel aléatoirement par une Bernoulli équidistribuée. Ainsi, Kmeans n'est pas une approche satisfaisante pour segmenter ce genre d'images
+\section{Segmentation MPM aveugle}
+Ici, nous allons effectuer une segmentation MPM en supposant l'indépendance entre les pixels. On se retrouve avec les segmentations suivantes. Les taux d'erreurs moyens sont calculés sur 200 segmentation par image.
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.18]{./segmentation_MPM.png}
+	\caption{Segmentation par MPM de nos images bruité}
+	\label{fig:segmentation_MPM}
+\end{figure}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Image \textbackslash Distribution du bruit} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(4,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(2,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$,$\mathcal{N}(1,9)$} \\ \hline
+abcd                           & 0,06                                                    & 0,22                                                    & 0,15                                                   \\ \hline
+B                              & 0,06                                                    & 0,25                                                    & 0,18                                                   \\ \hline
+Cible                          & 0,06                                                    & 0,26                                                    & 0,18                                                   \\ \hline
+Vache                          & 0,07                                                    & 0,31                                                    & 0,27                                                   \\ \hline
+Zebre                          & 0,07                                                    & 0,3                                                    & 0,24                                                   \\ \hline
+\end{tabular}
+\caption{Tableau récapitulatifs des taux d'erreurs moyens sur 200  itérations}
+\end{table}
+On n'observe pas de différence notable par la segmentation MPM par rapport à Kmeans pour les 2 premiers niveaux de bruit. Par contre, pour le dernier, la différence est considérable. Auparavant par Kmeans, comme les gaussiennes sont centré autour de la même moyenne, Kmeans ne voyait pas vraiment de différence entre les pixels. Avec l'introduction des connaissance sur les distributions, on peut voir que MPM arrive à différencier les pixels. Pour mieux comprendre, prenons 2 variable aléatoire suivant $X_1 \hookrightarrow \mathcal{N}(1,1)$ et $X_2 \hookrightarrow \mathcal{N}(1,9)$. Pour la simplicité de compréhension, supposons que les lois à priori valent 0.5. On à ci dessous nos 2 lois:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.4]{./gaussienne_1119.png}
+	\caption{2 gaussiennes de paramètres $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+	\label{fig:gauss_1119}
+\end{figure}
+\newline
+Ainsi, on voit que pour la plupart de la distribution de notre pixel noir (courbe rouge), il est prédominant par rapport à la distribution du pixel blanc. Cependant, comme le pixel blanc à une grande variance, la distribution n'est pas très importante sur cette zone et le pixel blanc arrive à être prédominant sur une grande partie de la distribution. Ce non empiétement sur l'autre distribution est responsable d'une meilleure classification. En plus MPM sait quelle distribution correspond à quelle classe contrairement à Kmeans qui trouves des centroïdes qui ne permettent pas toujours de trouver les bonnes classes. C'est en connaissant les lois à posteriori que le MPM peut être meilleur que le Kmeans
+
+\section{Segmentation non supervisée aveugle}
+Le but de cette partie est d'estimer les paramètres des lois à priori et à posteriori à partir de l'image observée. Nous allons dans un premier temps implémenter une approche EM (Expectation - Maximisation). Nous allons dans un premier temps étudier l'algorithme en nous basant sur l'image du B majuscule.
+Sur un algorithme EM sur 2000 itérations, nous étudions pour nos 3 profils de bruit utilisés auparavant avec des déviations par rapport au valeurs initiales $(p_1,p_2,m_1,m_2,sig_1,sig_2)$. Nos 3 profils de déviations sont: $(p_1^0,p_2^0,m_1^0,m_2^0,sig_1^0,sig_2^0)=(1) (p_1+0.1,p_2-0.1,m_1+0.5,m_2+0.5,sig_1+0.5,sig_2+0.5) ; (p_1+0.2,p_2-0.2,m_1+5,m_2+5,sig_1+1,sig_2+1) ; (p_1+0.1,p2-0.1,m_1+1,m_2+1,sig_1+3,sig_2+3)$. 
+Ainsi, le profil (1) correspond à une déviation légère des vrais valeurs. Le profil (2) nous montre ce qu'il se passe pour un gros écart autour des moyennes et (3) une grosse déviation des écarts types. On obtient les courbes de convergence de EM suivante associées à leurs taux moyen d'erreur pour une segmentation MPM aveugle.
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.17]{./segmentation_EM_diff_deviations.png}
+	\caption{Convergences des différentes valeurs avec l'algorithme EM avec leur taux moyen d'erreur MPM aveugle associé}
+	\label{fig:deviations_EM}
+\end{figure}
+\newline
+On se rend compte que pour les profils de bruits (1) et (3), la convergence de EM se fait assez facilement. Les valeurs des erreurs de la segmentation sont les mêmes que pour du supervisé. Pour le profil (2), la convergence est plus difficile. On voit que comme nous l'avons expliqué dans la dernière partie, le fait que les 2 gaussiennes soit confondues complique la segmentation. En effet, on voit que les valeurs ont du mal à convergé. Quand on utilise le profil de déviation (2), on se rend compte que EM diverge même de sa valeur "vraie". On peut penser que notre algorithme EM est attiré par un autre extremum local. On voit aussi que les taux d'erreurs moyens reste quand même proche à la valeur du MPM aveugle supervisé. Cela s'explique sûrement par le fait que comme de base notre segmentation n'est pas très bonne, une erreur sur les paramètres estimés n'est pas si grave si elle reste proche de la vrai valeur. En plus, on peut considérer que cette part d'erreur peut dans certains cas compenser l'erreur deja présente.
+\newline
+Maintenant, nous allons pouvoir effectuer une segmentation totalement non supervisées. L'objectif va être ici d'estimer les valeurs initiales seulement avec l'image observée. On à 2 approches. La premières est une approche naive qui à calculer $m_{image}$ et $sig_{image}$. On retiendra ensuite les valeurs suivantes: $(p_1^0,p_2^0,m_1^0,m_2^0,sig_1^0,sig_2^0)=(0.5,0.5,m_{image}-\frac{sig_{image}}{2},m_{image}+\frac{sig_{image}}{2},\frac{sig_{image}}{2},\frac{sig_{image}}{2})$. On trouve les résultats suivants:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.25]{./segmentation_non_supervisee_aveugle_EM_naive_convergence.png}
+	\caption{MPM non supervisée et EM avec initialisation naive}
+	\label{fig:deviations_EM_naive}
+\end{figure}
+\newline
+L'autre approche consiste à segmenter notre image par un Kmeans et à estimer empiriquement les valeurs recherchées. On trouve les résultats suivants:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.25]{./segmentation_non_supervisee_aveugle_EM_Kmeans_convergence.png}
+	\caption{MPM non supervisée et EM avec initialisation KMeans}
+	\label{fig:deviations_EM_Kmeans}
+\end{figure}
+\newline
+Même si en moyenne les taux d'erreurs sont similaires, on se rend compte que Kmeans converge plus vite. On utilisera donc Kmeans comme méthode d'initialisation.
+On va maintenant pouvoir effectuer notre segmentation aveugle non supervisée sur l'ensemble des images et des bruits pour comparer les résultats avec 2000 itérations de EM. On obtient le tableau suivant:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.18]{./segmentation_non_supervisee_aveugle_EM_Kmeans_image.png}
+	\caption{Segmentation par MPM non supervisée par EM-Kmeans de nos images bruité}
+	\label{fig:segmentation_MPM}
+\end{figure}
+\newline
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Image \textbackslash Distribution du bruit} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(4,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(2,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$,$\mathcal{N}(1,9)$} \\ \hline
+abcd                           & 0,06                                                    & 0,3                                                    & 0,15                                                   \\ \hline
+B                              & 0,06                                                    & 0,31                                                    & 0,18                                                   \\ \hline
+Cible                          & 0,06                                                    & 0,31                                                    & 0,18                                                   \\ \hline
+Vache                          & 0,07                                                    & 0,31                                                    & 0,26                                                   \\ \hline
+Zebre                          & 0,07                                                    & 0,31                                                    & 0,24                                                   \\ \hline
+\end{tabular}
+\caption{Tableau récapitulatifs des taux d'erreurs moyens sur 200  itérations}
+\end{table}
+On se rend compte que ici, on a augmenter en erreur sur le cas de bruit $\matcal{N}(1,1)$, $\matcal{N}(2,1)$ comme expliqué précédemment. Lors du texte, on trouve aussi des cas où EM échoue et donc on ne peux pas segmenter. Cela s'explique par le fait que EM à du se bloquer dans un extremum local. Nous allons donc implémenter une autre méthode dites SEM qui de part son coté stochastique peut résoudre ce problème. Nous allons d'abord tester SEM sur l'image du B pour comparer les convergences avec EM.
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.25]{./segmentation_non_supervisee_aveugle_SEM_Kmeans_convergence.png}
+	\caption{MPM non supervisée et EM avec initialisation KMeans}
+	\label{fig:deviations_EM_Kmeans}
+\end{figure}
+\newline
+On peut voir le coté stochastique sur les courbes. On voit aussi que SEM converge à peu près à la même vitesse que EM. Il présente aussi les mêmes problèmes pour le bruit (2) de difficultés à converger. On peut maintenant segmenter nos images par SEM:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.18]{./segmentation_non_supervisee_aveugle_SEM_Kmeans_image.png}
+	\caption{Segmentation par MPM non supervisée par SEM-Kmeans de nos images bruité}
+	\label{fig:segmentation_MPM_SEM}
+\end{figure}
+\newline
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Image \textbackslash Distribution du bruit} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(4,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(2,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$,$\mathcal{N}(1,9)$} \\ \hline
+abcd                           & 0,06                                                    & 0,3                                                    & 0,15                                                   \\ \hline
+B                              & 0,06                                                    & 0,31                                                    & 0,18                                                   \\ \hline
+Cible                          & 0,06                                                    & 0,31                                                    & 0,18                                                   \\ \hline
+Vache                          & 0,07                                                    & 0,33                                                    & 0,27                                                   \\ \hline
+Zebre                          & 0,07                                                    & 0,32                                                    & 0,24                                                   \\ \hline
+\end{tabular}
+\caption{Tableau récapitulatifs des taux d'erreurs moyens sur 200  itérations}
+\end{table}
+On voit que même si en moyenne, on obtient des convergences similaires, SEM permet d'eviter que l'algo converge vers un extremum local non global. On pourrait s'affranchir de l'ajout du stochastique sur le résultat final de SEM tout en gardant l'avantage sur l'algo en prenant comme valeur finale une moyenne des k dernières valeurs.
+\section{Segmentation par champs de Markov cachés supervisée}
+Grace à un échantilloneur de Gibbs, nous allons pouvoir simuler un champs de Gibbs suivant une distribution donnée. On a donc pu générer un champs de paramètre $\alpha=1$. Ensuite, on le bruite et on peut le segmenter par la méthode des champs. On peut voir ici, le résultat:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.18]{./generation_et_segmentation_markov_supervisee.png}
+	\caption{Generation de champs de Markov et segmentation par champs de markov cachée}
+	\label{fig:champs_genere_markov}
+\end{figure}
+On voit que dans le cas de la segmentation de champs de markov, notre modèle atteint des taux d'erreur très faibles. Cependant, dans le cas d'image réelles, on ne connait pas la probabilité conditionellement au voisinage et on va donc devoir l'estimer. Dans un premier temps, nous allons considérer que cette probabilité est fixé et nous allons segmenter nos images comme dans les cas précédents. Pour des problèmes de complexité, nous allons effectuer notre étude sur des images 128x128.
+On obtient le résultat suivant:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.18]{./segmentation_MPM_champs_supervise.png}
+	\caption{Segmentation par champs de markov d'image réelles bruité supervisée }
+	\label{fig:markov_supervisee}
+\end{figure}
+On remarque que a part pour le zèbre, on obtient des taux d'erreurs très bas. On voit cependant apparaitre certains artifices lors de la segmentation (surtout pour le profil de bruit où les gaussiennes sont très proches. Pour le zèbre, cela peut s'expliquer par le fait que l'image comprend une certaine texture qui n'est pas inclue dans le modèle.
+\newline
+On remarquera que ici, on a effectuer une approximation sur la proba conditionnelement aux voisinages qui peut avoir induit des erreurs de segmentation. Ceci sera réglé lors de l'approche non supervisée. On obtient le tableau des erreurs suivant:
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Image \textbackslash Distribution du bruit} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(4,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(2,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$,$\mathcal{N}(1,9)$} \\ \hline
+abcd                           & 0,005                                                    & 0,07                                                    & 0,03                                                   \\ \hline
+B                              & 0,005                                                    & 0,03                                                    & 0,01                                                   \\ \hline
+Cible                          & 0,005                                                   & 0,05                                                    & 0,03                                                   \\ \hline
+Vache                          & 0,02                                                    & 0,07                                                    & 0,05                                                   \\ \hline
+Zebre                          & 0,02                                                    & 0,34                                                    & 0,32                                                   \\ \hline
+\end{tabular}
+\caption{Tableau récapitulatifs des taux d'erreurs moyens sur 200  itérations}
+\end{table}
+A part le zèbre, nos image on une segmentation très bonne par rapport aux résultats du supervisé aveugle
+\section{Segmentation par champs de Markov cachés non-supervisée}
+Pour cette partie, la complexité de notre algorithme est devenue prohibitive. Chaque itérations sur les 15 différents cas précédents mets plus de 24h sur des images 128x128. Nous avons essayer d'effectuer quelques itérations mais l'ordinateur à fini par shutdown le kernel. Nous allons donc devoir nous contenter de taux d'erreur propre à l'image et non moyens. On trouve le résultat suivant:
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.18]{./segmentation_markov_non_supervisee_3.png}
+	\caption{Segmentation par champs de markov d'image réelles bruité non supervisée }
+	\label{fig:markov_non_supervisee}
+\end{figure}
+On remarque que le résultat final n'a pas le même aspect que le résultat supervisé. Ma théorie est que notre EM aurait besoin de plus d'itération pour bien faire converger la probabilité conditionnelle aux voisinages car on remarque la présence de pixels isolées qui peuvent être du à une proba qui ne sanctionne pas assez les pixels à zéros voisins similaires. Cependant, on obtient quand même des taux d'erreurs meilleurs que la segmentation aveugle. On obtient le tableau suivant:
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Image \textbackslash Distribution du bruit} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(4,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$, $\mathcal{N}(2,1)$} & \multicolumn{1}{l|}{$\mathcal{N}(1,1)$,$\mathcal{N}(1,9)$} \\ \hline
+abcd                           & 0,03                                                    & 0,05                                                    & 0,04                                                   \\ \hline
+B                              & 0,04                                                    & 0,05                                                    & 0,04                                                   \\ \hline
+Cible                          & 0,04                                                   & 0,05                                                    & 0,05                                                   \\ \hline
+Vache                          & 0,06                                                    & 0,08                                                    & 0,09                                                   \\ \hline
+Zebre                          & 0,06                                                    & 0,32                                                    & 0,26                                                   \\ \hline
+\end{tabular}
+\caption{Tableau récapitulatifs des taux d'erreurs moyens sur 1  itérations}
+\end{table}
+Comme on peut le voir, nos résultats sont un peu moins bon mais on constate que l'on observe moins d'artifact visuels que sur le supervisé. Ceci est du au fait que l'on estime les proba conditionnelle au voisinage. Ainsi, on peut supposer que si on arrive a avoir suffisament d'iterations pour se débarasser des pixels isoler, on devrait arriver à obtenir de meilleurs résultats.
+\section{Segmentation réelle}
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.30]{./europe_seg.png}
+	\caption{Segmentation d'une image satellite de l'europe}
+	\label{fig:image_reelle_europe}
+\end{figure}
+On voit que la segmentation champs de l'europe est bien meilleure que les autres méthodes. A part la norvège, le continent européen est plutot bien segmentée. Ici, 2 classes devait clairement être identifié: L'eau et la terre.
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.30]{./lotus_seg.png}
+	\caption{Segmentation d'une image d'une fleur de lotus}
+	\label{fig:image_reelle_lotus}
+\end{figure}
+Ici, on voit que K-Means est la méthode qui marche le mieux. En effet, sur MPM, l'algo à du mal à differencier la fleur de l'eau. Peut etre que pour améliorer la segmentation, on devrait la faire sur 3 classes pour distinguer les pétales, des feuilles et de l'eau pour avoir une meilleur segmentation
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.30]{./fusee_seg.png}
+	\caption{Segmentation d'une image satellite de fusée}
+	\label{fig:image_reelle_fusee}
+\end{figure}
+Ici, on voit que l'algo segmente assez bien la fusée mais identifie les nuages en tant que fusée. Comme la fleur, on devrait essayer avec plusieurs classes. On voit aussi un problème qui se pose pour la segmentation d'objets ayant différents attributs comme la fusée qui à des zones blanches et des zones noires.
+\end{document}

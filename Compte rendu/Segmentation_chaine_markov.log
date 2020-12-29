@@ -1,0 +1,1161 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.8)  12 NOV 2019 16:39
+entering extended mode
+**./Segmentation_chaine_markov.tex
+(Segmentation_chaine_markov.tex
+LaTeX2e <2019-10-01>
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) ("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
+y"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+ ("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\latin1.def"
+File: latin1.def 2018/08/11 v1.3c Input encoding file
+))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
+Package: babel 2019/09/27 3.34 The Babel package
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def
+"
+File: switch.def 2019/09/27 3.34 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel-french\fre
+nch.ldf"
+Language: french 2019/09/07 v3.5f French support from the babel system
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2019/09/27 3.34 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.d
+ef")
+\bbl@dirlevel=\count89
+)
+\l@acadian = a dialect from \language\l@french 
+\l@canadien = a dialect from \language\l@french 
+\FB@nonchar=\count90
+Package babel Info: Making : an active character on input line 419.
+Package babel Info: Making ; an active character on input line 420.
+Package babel Info: Making ! an active character on input line 421.
+Package babel Info: Making ? an active character on input line 422.
+\FBguill@level=\count91
+\FBold@everypar=\toks16
+\FB@Mht=\dimen104
+\mc@charclass=\count92
+\mc@charfam=\count93
+\mc@charslot=\count94
+\std@mcc=\count95
+\dec@mcc=\count96
+\c@FBcaption@count=\count97
+\listindentFB=\dimen105
+\descindentFB=\dimen106
+\labelindentFB=\dimen107
+\labelwidthFB=\dimen108
+\leftmarginFB=\dimen109
+\parindentFFN=\dimen110
+\FBfnindent=\dimen111
+))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/carlisle\scalefnt.
+sty")
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty"
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1enc.def"
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.s
+ty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.
+sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
+y"
+Package: amsmath 2019/04/01 v2.17c AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.st
+y"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen112
+))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen113
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
+"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count98
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count99
+\leftroot@=\count100
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count101
+\DOTSCASE@=\count102
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count103
+\c@MaxMatrixCols=\count104
+\dotsspace@=\muskip10
+\c@parentequation=\count105
+\dspbrk@lvl=\count106
+\tag@help=\toks20
+\row@=\count107
+\column@=\count108
+\maxfields@=\count109
+\andhelp@=\toks21
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
+\@envbody=\toks22
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2855.
+LaTeX Info: Redefining \] on input line 2856.
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
+sty"
+\lst@mode=\count110
+\lst@gtempboxa=\box29
+\lst@token=\toks24
+\lst@length=\count111
+\lst@currlwidth=\dimen121
+\lst@column=\count112
+\lst@pos=\count113
+\lst@lostspace=\dimen122
+\lst@width=\dimen123
+\lst@newlines=\count114
+\lst@lineno=\count115
+\lst@maxwidth=\dimen124
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.s
+ty"
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count116
+\lst@skipnumbers=\count117
+\lst@framebox=\box30
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
+cfg"
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
+sty"
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip46
+\enit@outerparindent=\dimen125
+\enit@toks=\toks25
+\enit@inbox=\box31
+\enit@count@id=\count118
+\enitdp@description=\count119
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.s
+ty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.
+sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.
+sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count120
+\Gm@cntv=\count121
+\c@Gm@tempcnt=\count122
+\Gm@bindingoffset=\dimen126
+\Gm@wd@mp=\dimen127
+\Gm@odd@mp=\dimen128
+\Gm@even@mp=\dimen129
+\Gm@layoutwidth=\dimen130
+\Gm@layoutheight=\dimen131
+\Gm@layouthoffset=\dimen132
+\Gm@layoutvoffset=\dimen133
+\Gm@dimlist=\toks26
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+cfg"))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\verbatim.sty
+"
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks27
+\verbatim@line=\toks28
+\verbatim@in@stream=\read1
+) ("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bbm\bbm.sty"
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
+sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
+sty"
+Package: graphics 2019/07/20 v1.3b Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen134
+\Gin@req@width=\dimen135
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count123
+\float@exts=\toks29
+\float@box=\box32
+\@float@everytoks=\toks30
+\@floatcapt=\box33
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.st
+y"
+Package: caption 2019/09/01 v3.3d Customizing captions (AR)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.s
+ty"
+Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen136
+\captionmargin@=\dimen137
+\captionwidth=\dimen138
+\caption@tempdima=\dimen139
+\caption@indent=\dimen140
+\caption@parindent=\dimen141
+\caption@hangindent=\dimen142
+)
+\c@caption@flags=\count124
+\c@ContinuedFloat=\count125
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs.
+sty"
+Package: booktabs 2019/10/08 v1.6180339 publication quality tables
+\heavyrulewidth=\dimen143
+\lightrulewidth=\dimen144
+\cmidrulewidth=\dimen145
+\belowrulesep=\dimen146
+\belowbottomsep=\dimen147
+\aboverulesep=\dimen148
+\abovetopsep=\dimen149
+\cmidrulesep=\dimen150
+\cmidrulekern=\dimen151
+\defaultaddspace=\dimen152
+\@cmidla=\count126
+\@cmidlb=\count127
+\@aboverulesep=\dimen153
+\@belowrulesep=\dimen154
+\@thisruleclass=\count128
+\@lastruleclass=\count129
+\@thisrulewidth=\dimen155
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow.
+sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip47
+\multirow@cntb=\count130
+\multirow@dima=\skip48
+\bigstrutjot=\dimen156
+) (Segmentation_chaine_markov.aux
+
+LaTeX Warning: Label `fig:gauss_1119' multiply defined.
+
+
+LaTeX Warning: Label `fig:segmentation_MPM' multiply defined.
+
+
+LaTeX Warning: Label `fig:deviations_EM_Kmeans' multiply defined.
+
+)
+\openout1 = `Segmentation_chaine_markov.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Info: Redefining \degres on input line 37.
+LaTeX Info: Redefining \dots on input line 37.
+Package french.ldf Info: Setting StandardItemizeEnv=true for
+(french.ldf)             compatibility with enumitem package,
+(french.ldf)             reported on input line 37.
+Package french.ldf Info: Setting StandardEnumerateEnv=true for
+(french.ldf)             compatibility with enumitem package,
+(french.ldf)             reported on input line 37.
+LaTeX Info: Redefining \up on input line 37.
+\c@lstlisting=\count131
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=472.03123pt
+* \textheight=709.61174pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-66.59087pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
+df.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count132
+\scratchdimen=\dimen157
+\scratchbox=\box34
+\nofMPsegments=\count133
+\nofMParguments=\count134
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count135
+\MPscratchDim=\dimen158
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
+\everyMPtoPDFconversion=\toks32
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
+base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infware
+rr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.st
+y"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvdefin
+ekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds
+.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions
+.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvsetke
+ys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\etexcmd
+s.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifluate
+x.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdftexc
+mds.sty"
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 4
+0.
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmss.fd"
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+
+LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <10> not available
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 43.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <17.28> not available
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 43.
+
+
+LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <14.4> not available
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 45.
+
+! Undefined control sequence.
+l.48 			\HRule
+               \\[0.4cm]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 			\HRule \\
+                 [0.4cm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.51      \HRule
+                 \\[2cm]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51      \HRule \\
+                   [2cm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<./bruitage.png, id=1, 1164.35pt x 1645.14626pt>
+File: ./bruitage.png Graphic file (type png)
+<use ./bruitage.png>
+Package pdftex.def Info: ./bruitage.png  used on input line 52.
+(pdftex.def)             Requested size: 256.15779pt x 361.9333pt.
+
+LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <12> not available
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 57.
+
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 59
+.
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
+
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{C:/Users/nicod/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./bruitage.
+png>] (Segmentation_chaine_markov.toc)
+\tf@toc=\write3
+\openout3 = `Segmentation_chaine_markov.toc'.
+
+ (Segmentation_chaine_markov.lof)
+\tf@lof=\write4
+\openout4 = `Segmentation_chaine_markov.lof'.
+
+
+(Segmentation_chaine_markov.lot)
+\tf@lot=\write5
+\openout5 = `Segmentation_chaine_markov.lot'.
+
+ [1]
+("C:\Users\nicod\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.
+sty"
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 \newline
+             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: ./bruitage.png Graphic file (type png)
+<use ./bruitage.png>
+Package pdftex.def Info: ./bruitage.png  used on input line 93.
+(pdftex.def)             Requested size: 291.08679pt x 411.28555pt.
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 \newline
+             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...e. On différencie bien les 2 classes à l’
+                                                  œil nu. Cela se comprend e...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 .... On différencie bien les 2 classes à l’œ
+                                                  il nu. Cela se comprend en...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+<./gaussienne_1141.png, id=22, 1167.36125pt x 580.1675pt>
+File: ./gaussienne_1141.png Graphic file (type png)
+<use ./gaussienne_1141.png>
+Package pdftex.def Info: ./gaussienne_1141.png  used on input line 104.
+(pdftex.def)             Requested size: 466.93623pt x 232.06288pt.
+! Undefined control sequence.
+<argument> ...res $\mathcal {N}(1,1)$ et $\matcal 
+                                                  {N}(4,1)$\relax }}{\thepag...
+l.105 ... $\mathcal{N}(1,1)$ et $\matcal{N}(4,1)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.105 ... $\mathcal{N}(1,1)$ et $\matcal{N}(4,1)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.105 ... $\mathcal{N}(1,1)$ et $\matcal{N}(4,1)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[2]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.108 ...loignées. Ce qui explique que le bruit n’
+                                                  empêche pas la distinction...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+<./gaussienne_1121.png, id=29, 1167.36125pt x 580.1675pt>
+File: ./gaussienne_1121.png Graphic file (type png)
+<use ./gaussienne_1121.png>
+Package pdftex.def Info: ./gaussienne_1121.png  used on input line 113.
+(pdftex.def)             Requested size: 466.93623pt x 232.06288pt.
+! Undefined control sequence.
+<argument> ...res $\mathcal {N}(1,1)$ et $\matcal 
+                                                  {N}(2,1)$\relax }}{\thepag...
+l.114 ... $\mathcal{N}(1,1)$ et $\matcal{N}(2,1)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.114 ... $\mathcal{N}(1,1)$ et $\matcal{N}(2,1)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.114 ... $\mathcal{N}(1,1)$ et $\matcal{N}(2,1)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<./gaussienne_1119.png, id=30, 1163.34625pt x 577.15625pt>
+File: ./gaussienne_1119.png Graphic file (type png)
+<use ./gaussienne_1119.png>
+Package pdftex.def Info: ./gaussienne_1119.png  used on input line 122.
+(pdftex.def)             Requested size: 465.33026pt x 230.8584pt.
+! Undefined control sequence.
+<argument> ...res $\mathcal {N}(1,1)$ et $\matcal 
+                                                  {N}(1,9)$\relax }}{\thepag...
+l.123 ... $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.123 ... $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.123 ... $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[3 <./gaussienne_1141.png> <./gaussienne_1121.png>] [4 <./gaussienne_1119.png>]
+<./segmentation_kmeans.png, id=40, 2842.62pt x 2195.20125pt>
+File: ./segmentation_kmeans.png Graphic file (type png)
+<use ./segmentation_kmeans.png>
+Package pdftex.def Info: ./segmentation_kmeans.png  used on input line 133.
+(pdftex.def)             Requested size: 511.64954pt x 395.11917pt.
+
+Overfull \hbox (39.6183pt too wide) in paragraph at lines 133--134
+ [][] 
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[5 <./segmentation_kmeans.png>]
+<./segmentation_MPM.png, id=45, 2845.63126pt x 2195.20125pt>
+File: ./segmentation_MPM.png Graphic file (type png)
+<use ./segmentation_MPM.png>
+Package pdftex.def Info: ./segmentation_MPM.png  used on input line 158.
+(pdftex.def)             Requested size: 512.19153pt x 395.11917pt.
+
+Overfull \hbox (40.1603pt too wide) in paragraph at lines 158--159
+ [][] 
+ []
+
+File: ./gaussienne_1119.png Graphic file (type png)
+<use ./gaussienne_1119.png>
+Package pdftex.def Info: ./gaussienne_1119.png  used on input line 178.
+(pdftex.def)             Requested size: 465.33026pt x 230.8584pt.
+! Undefined control sequence.
+<argument> ...res $\mathcal {N}(1,1)$ et $\matcal 
+                                                  {N}(1,9)$\relax }}{\thepag...
+l.179 ... $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.179 ... $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.179 ... $\mathcal{N}(1,1)$ et $\matcal{N}(1,9)$}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[6 <./segmentation_MPM.png>]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.182 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<./segmentation_EM_diff_deviations.png, id=51, 2827.56375pt x 2273.49374pt>
+File: ./segmentation_EM_diff_deviations.png Graphic file (type png)
+<use ./segmentation_EM_diff_deviations.png>
+Package pdftex.def Info: ./segmentation_EM_diff_deviations.png  used on input l
+ine 191.
+(pdftex.def)             Requested size: 480.67949pt x 386.48883pt.
+
+Overfull \hbox (8.64825pt too wide) in paragraph at lines 191--192
+ [][] 
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.195 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[7]
+<./segmentation_non_supervisee_aveugle_EM_naive_convergence.png, id=56, 1717.41
+624pt x 636.3775pt>
+File: ./segmentation_non_supervisee_aveugle_EM_naive_convergence.png Graphic fi
+le (type png)
+<use ./segmentation_non_supervisee_aveugle_EM_naive_convergence.png>
+Package pdftex.def Info: ./segmentation_non_supervisee_aveugle_EM_naive_converg
+ence.png  used on input line 201.
+(pdftex.def)             Requested size: 429.35301pt x 159.09398pt.
+
+Overfull \hbox (32.03717pt too wide) in paragraph at lines 196--204
+\T1/cmr/m/n/10 proche naive qui à cal-cu-ler $\OML/cmm/m/it/10 m[]$ \T1/cmr/m/n
+/10 et $\OML/cmm/m/it/10 sig[]$\T1/cmr/m/n/10 . On re-tien-dra en-suite les va-
+leurs sui-vantes : $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p[]; p[]; m[]; m[]; sig[]
+; sig[]\OT1/cmr/m/n/10 ) =
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[8 <./segmentation_EM_diff_deviations.png>]
+<./segmentation_non_supervisee_aveugle_EM_Kmeans_convergence.png, id=63, 1717.4
+1624pt x 636.3775pt>
+File: ./segmentation_non_supervisee_aveugle_EM_Kmeans_convergence.png Graphic f
+ile (type png)
+<use ./segmentation_non_supervisee_aveugle_EM_Kmeans_convergence.png>
+Package pdftex.def Info: ./segmentation_non_supervisee_aveugle_EM_Kmeans_conver
+gence.png  used on input line 209.
+(pdftex.def)             Requested size: 429.35301pt x 159.09398pt.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<./segmentation_non_supervisee_aveugle_EM_Kmeans_image.png, id=64, 2845.63126pt
+ x 2195.20125pt>
+File: ./segmentation_non_supervisee_aveugle_EM_Kmeans_image.png Graphic file (t
+ype png)
+<use ./segmentation_non_supervisee_aveugle_EM_Kmeans_image.png>
+Package pdftex.def Info: ./segmentation_non_supervisee_aveugle_EM_Kmeans_image.
+png  used on input line 218.
+(pdftex.def)             Requested size: 512.19153pt x 395.11917pt.
+
+Overfull \hbox (40.1603pt too wide) in paragraph at lines 218--219
+ [][] 
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[9 <./segmentation_non_supervisee_aveugle_EM_naive_convergence.png> <./segmenta
+tion_non_supervisee_aveugle_EM_Kmeans_convergence.png>]
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.236 ...er en erreur sur le cas de bruit $\matcal
+                                                  {N}(1,1)$, $\matcal{N}(2,1...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \matcal 
+                        
+l.236 ... cas de bruit $\matcal{N}(1,1)$, $\matcal
+                                                  {N}(2,1)$ comme expliqué p...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<./segmentation_non_supervisee_aveugle_SEM_Kmeans_convergence.png, id=70, 1717.
+41624pt x 636.3775pt>
+File: ./segmentation_non_supervisee_aveugle_SEM_Kmeans_convergence.png Graphic 
+file (type png)
+<use ./segmentation_non_supervisee_aveugle_SEM_Kmeans_convergence.png>
+Package pdftex.def Info: ./segmentation_non_supervisee_aveugle_SEM_Kmeans_conve
+rgence.png  used on input line 239.
+(pdftex.def)             Requested size: 429.35301pt x 159.09398pt.
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.243 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[10 <./segmentation_non_supervisee_aveugle_EM_Kmeans_image.png>]
+<./segmentation_non_supervisee_aveugle_SEM_Kmeans_image.png, id=75, 2843.62375p
+t x 2195.20125pt>
+File: ./segmentation_non_supervisee_aveugle_SEM_Kmeans_image.png Graphic file (
+type png)
+<use ./segmentation_non_supervisee_aveugle_SEM_Kmeans_image.png>
+Package pdftex.def Info: ./segmentation_non_supervisee_aveugle_SEM_Kmeans_image
+.png  used on input line 247.
+(pdftex.def)             Requested size: 511.8302pt x 395.11917pt.
+
+Overfull \hbox (39.79897pt too wide) in paragraph at lines 247--248
+ [][] 
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.251 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[11 <./segmentation_non_supervisee_aveugle_SEM_Kmeans_convergence.png> <./segme
+ntation_non_supervisee_aveugle_SEM_Kmeans_image.png>]
+<./generation_et_segmentation_markov_supervisee.png, id=81, 2658.93375pt x 2229
+.32875pt>
+File: ./generation_et_segmentation_markov_supervisee.png Graphic file (type png
+)
+<use ./generation_et_segmentation_markov_supervisee.png>
+Package pdftex.def Info: ./generation_et_segmentation_markov_supervisee.png  us
+ed on input line 270.
+(pdftex.def)             Requested size: 478.58743pt x 401.26187pt.
+
+Overfull \hbox (6.5562pt too wide) in paragraph at lines 270--271
+ [][] 
+ []
+
+<./segmentation_MPM_champs_supervise.png, id=82, 2844.6275pt x 2195.20125pt>
+File: ./segmentation_MPM_champs_supervise.png Graphic file (type png)
+<use ./segmentation_MPM_champs_supervise.png>
+Package pdftex.def Info: ./segmentation_MPM_champs_supervise.png  used on input
+ line 278.
+(pdftex.def)             Requested size: 512.01086pt x 395.11917pt.
+
+Overfull \hbox (39.97963pt too wide) in paragraph at lines 278--279
+ [][] 
+ []
+
+[12 <./generation_et_segmentation_markov_supervisee.png>]
+<./segmentation_markov_non_supervisee_3.png, id=88, 2843.62375pt x 2195.20125pt
+>
+File: ./segmentation_markov_non_supervisee_3.png Graphic file (type png)
+<use ./segmentation_markov_non_supervisee_3.png>
+Package pdftex.def Info: ./segmentation_markov_non_supervisee_3.png  used on in
+put line 303.
+(pdftex.def)             Requested size: 511.8302pt x 395.11917pt.
+
+Overfull \hbox (39.79897pt too wide) in paragraph at lines 303--304
+ [][] 
+ []
+
+[13 <./segmentation_MPM_champs_supervise.png>] [14 <./segmentation_markov_non_s
+upervisee_3.png>]
+<./europe_seg.png, id=97, 1721.43124pt x 337.26pt>
+File: ./europe_seg.png Graphic file (type png)
+<use ./europe_seg.png>
+Package pdftex.def Info: ./europe_seg.png  used on input line 325.
+(pdftex.def)             Requested size: 516.43336pt x 101.17877pt.
+
+Overfull \hbox (44.40213pt too wide) in paragraph at lines 325--326
+ [][] 
+ []
+
+<./lotus_seg.png, id=98, 1721.43124pt x 337.26pt>
+File: ./lotus_seg.png Graphic file (type png)
+<use ./lotus_seg.png>
+Package pdftex.def Info: ./lotus_seg.png  used on input line 332.
+(pdftex.def)             Requested size: 516.43336pt x 101.17877pt.
+
+Overfull \hbox (44.40213pt too wide) in paragraph at lines 332--333
+ [][] 
+ []
+
+<./fusee_seg.png, id=99, 1721.43124pt x 337.26pt>
+File: ./fusee_seg.png Graphic file (type png)
+<use ./fusee_seg.png>
+Package pdftex.def Info: ./fusee_seg.png  used on input line 339.
+(pdftex.def)             Requested size: 516.43336pt x 101.17877pt.
+
+Overfull \hbox (44.40213pt too wide) in paragraph at lines 339--340
+ [][] 
+ []
+
+[15 <./europe_seg.png> <./lotus_seg.png> <./fusee_seg.png>]
+(Segmentation_chaine_markov.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 8278 strings out of 492452
+ 123332 string characters out of 3120064
+ 375887 words of memory out of 3000000
+ 12476 multiletter control sequences out of 15000+200000
+ 16591 words of font info for 40 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 46i,10n,42p,1079b,1307s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\nicod\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
+ecti1000.pk> <C:\Users\nicod\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecbi1000.pk> <C:\Users\nicod\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecxc1000.pk> <C:\Users\nicod\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\nicod\AppData\Local\MiKTeX
+\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\nicod\AppData\Lo
+cal\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\nicod\
+AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Us
+ers\nicod\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.
+pk> <C:\Users\nicod\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecsx2074.pk> <C:\Users\nicod\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen
+/ec/dpi600\eccc1440.pk> <C:\Users\nicod\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
+r/jknappen/ec/dpi600\eccc1728.pk><C:/Users/nicod/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nicod/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nicod/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users
+/nicod/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><C:/Users/nicod/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr7.pfb><C:/Users/nicod/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb>
+Output written on Segmentation_chaine_markov.pdf (16 pages, 14002261 bytes).
+PDF statistics:
+ 444 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+
